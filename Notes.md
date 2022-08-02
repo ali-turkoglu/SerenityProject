@@ -93,8 +93,8 @@ Here is the [link](https://docs.github.com/en/get-started/writing-on-github/gett
            </plugins>
        </build>
       ```
-3.Create a package called `EU8` under `src/test/java`
-   1. under EU8 create `spartan` and under spartan create `admin` package
+3.Create a package called `eu8` under `src/test/java`
+   1. under eu8 create `spartan` and under spartan create `admin` package
    2. create a class called `SpartanAdminGetTest`
    
    
