@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="1" name="eu8.spartan.admin.SpartanAdminGetTest" skipped="0" tests="3" time="13.55" timestamp="2022-08-02 05:13:35"><testcase classname="eu8.spartan.admin.SpartanAdminGetTest" name="Get all spartan"/><testcase classname="eu8.spartan.admin.SpartanAdminGetTest" name="GET request with Serenity Assertion way"><failure message="1 expectation failed.&#10;Expected status code &lt;201&gt; but was &lt;200&gt;.&#10;" type="java.lang.AssertionError">1 expectation failed.
+Expected status code &lt;201&gt; but was &lt;200&gt;.
+</failure><system-err>1 expectation failed.
+Expected status code &lt;201&gt; but was &lt;200&gt;.
+&#13;
+io.restassured.internal.ResponseSpecificationImpl.validateResponseIfRequired(ResponseSpecificationImpl.groovy:674)&#13;
+io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:126)&#13;
+io.restassured.internal.ResponseSpecificationImpl.statusCode(ResponseSpecificationImpl.groovy:134)&#13;
+io.restassured.internal.ValidatableResponseOptionsImpl.statusCode(ValidatableResponseOptionsImpl.java:89)&#13;
+io.restassured.internal.ValidatableResponseImpl.super$2$statusCode(ValidatableResponseImpl.groovy)&#13;
+groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)&#13;
+groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1268)&#13;
+io.restassured.internal.ValidatableResponseImpl.statusCode(ValidatableResponseImpl.groovy:142)&#13;
+io.restassured.internal.ValidatableResponseImpl.statusCode(ValidatableResponseImpl.groovy)&#13;
+eu8.spartan.admin.SpartanAdminGetTest.lambda$test3$0(SpartanAdminGetTest.java:74)&#13;
+net.serenitybdd.rest.Ensure.performCheck(Ensure.java:35)&#13;
+net.serenitybdd.rest.Ensure.that(Ensure.java:23)&#13;
+eu8.spartan.admin.SpartanAdminGetTest.test3(SpartanAdminGetTest.java:74)&#13;
+</system-err></testcase><testcase classname="eu8.spartan.admin.SpartanAdminGetTest" name="Get one spartan"/></testsuite>

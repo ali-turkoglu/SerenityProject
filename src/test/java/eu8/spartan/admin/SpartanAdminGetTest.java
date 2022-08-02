@@ -2,10 +2,14 @@ package eu8.spartan.admin;
 
 import io.restassured.http.ContentType;
 import net.serenitybdd.junit5.SerenityTest;
+import net.serenitybdd.rest.Ensure;
+import net.serenitybdd.rest.SerenityRest;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.*;
+import static org.hamcrest.Matchers.*;
 
 
 
@@ -23,7 +27,7 @@ public class SpartanAdminGetTest {
     @Test
     public void getAllSpartan(){
 
-        given()
+        SerenityRest.given()
                 .accept(ContentType.JSON)
                 .auth().basic("admin","admin")
                 .when()
@@ -32,9 +36,48 @@ public class SpartanAdminGetTest {
                 .statusCode(200)
                 .contentType(ContentType.JSON);
 
+        System.out.println("SerenityRest.lastResponse().statusCode() = " + SerenityRest.lastResponse().statusCode());
+
+        String name = SerenityRest.lastResponse().jsonPath().getString("name");
+        System.out.println("name = " + name);
+
     }
 
+    @Test
+    public void getOneSpartan(){
 
+        SerenityRest.given()
+                .accept(ContentType.JSON)
+                .auth().basic("admin","admin")
+                .pathParam("id",15)
+                .when()
+                .get("/api/spartans/{id}")
+                .then()
+                .statusCode(200)
+                .contentType(ContentType.JSON);
+
+    }
+
+    @DisplayName("GET request with Serenity Assertion way")
+    @Test
+    public void test3(){
+
+        SerenityRest.given()
+                .accept(ContentType.JSON)
+                .auth().basic("admin","admin")
+                .pathParam("id",15)
+                .when()
+                .get("/api/spartans/{id}");
+
+        // Serenity way of assertion
+
+        Ensure.that("Status code is 200",validatableResponse -> validatableResponse.statusCode(201) );
+
+        Ensure.that("Content-type is JSON",vRes -> vRes.contentType(ContentType.JSON));
+
+        Ensure.that("Id is 15", vRes -> vRes.body("id",is(15)));
+
+    }
 
 
 }
