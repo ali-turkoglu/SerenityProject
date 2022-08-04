@@ -1,0 +1,21 @@
+package eu8.spartan;
+
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.io.TempDir;
+import utilities.ConfigReader;
+
+@Disabled
+public class ConfigDemoTest {
+
+    @Test
+    public void test1(){
+
+        System.out.println("ConfigReader.getProperty(\"serenity.project.name\") = " + ConfigReader.getProperty("serenity.project.name"));
+
+        System.out.println(ConfigReader.getProperty("spartan.editor.username"));
+
+    }
+
+
+}
